@@ -15,7 +15,7 @@ Config = {
     -- Set this to true if you want to disarm the player when they play an emote.
     DisarmPlayer = false,
     -- Set this if you really wanna disable emotes in cars, as of 1.7.2 they only play the upper body part if in vehicle
-    AllowedInCars = true,
+    AllowedInCars = false,
     -- You can disable the menu here / change the keybind. It is currently set to F5
     MenuKeybindEnabled = true,
     MenuKeybind = 'f4', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
@@ -25,13 +25,13 @@ Config = {
     -- You can change the header image for the menu here
     -- Use a 512 x 128 image!
     -- Note this might cause an issue of the image getting stuck on peoples screens
-    CustomMenuEnabled = true,
+    CustomMenuEnabled = false,
     MenuImage = "https://i.giphy.com/media/zpKIWAzNO9IhYwEGkN/giphy.gif", ----[Custom banner IMGUR or GIPHY URLs go here ]---
     -- You can change the menu image by pasting a link above. It must be the same width and length
     -- You can change the name of the menu here or leave it blank to remove the text in front of the custom banners
-    MenuTitle = "",
+    MenuTitle = "rpEmotes",
     -- You can change the menu position here
-    MenuPosition = "right", -- (left, right)
+    MenuPosition = "left", -- (left, right)
     -- You can enable or disable the Ragdoll keybinding here.
     RagdollEnabled = false,
     RagdollKeybind = 'u', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
@@ -58,7 +58,7 @@ Config = {
     -- You can disable the Adult Emotes here.
     AdultEmotesDisabled = false,
     -- You can disable the Animal Emotes here.
-    AnimalEmotesEnabled = true,
+    AnimalEmotesEnabled = false,
     -- Used to enable or disable the search feature in the menu.
     Search = true,
     -- You can disable the handsup here / change the keybind. It is currently set to H
@@ -69,7 +69,7 @@ Config = {
     PointingKeybindEnabled = true,
     PointingKeybind = 'b', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     -- If crouching should be enabled.
-    CrouchEnabled = true,
+    CrouchEnabled = false,
     CrouchKeybindEnabled = true, -- If true, crouching will use keybinds.
     CrouchKeybind = 'lcontrol', -- The default crouch keybind, get the button string here: https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     CrouchOverride = false, -- If true, you won't enter stealth mode even if the crouch key and the "duck" key are the same.
@@ -78,7 +78,7 @@ Config = {
     CrawlKeybindEnabled = true, -- If true, crawling will use keybinds.
     CrawlKeybind = 'rcontrol', -- The default crawl keybind, get the button string here: https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     -- Check for updates
-	CheckForUpdates = true,
+	CheckForUpdates = false,
 }
 
 Config.KeybindKeys = {

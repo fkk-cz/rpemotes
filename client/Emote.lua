@@ -499,7 +499,19 @@ function OnEmotePlay(EmoteName, textureVariation)
     end
 
     if not DoesEntityExist(PlayerPedId()) then
-        return false
+        return
+    end
+
+    if LocalPlayer.state.blockClearTasks or LocalPlayer.state.handcuffed or LocalPlayer.state.inJail or LocalPlayer.state.inCommunityService then
+        return
+    end
+
+    if IsPedBeingStunned(PlayerPedId()) then
+        return
+    end
+
+    if PlayerHasProp and IsPedArmed(PlayerPedId(), 7) then
+        return
     end
 
     -- Don't play a new animation if we are in an exit emote
@@ -510,6 +522,10 @@ function OnEmotePlay(EmoteName, textureVariation)
     local animOption = EmoteName.AnimationOptions
     if animOption and animOption.NotInVehicle and InVehicle then
         return EmoteChatMessage("You can't play this animation while in vehicle.")
+    end
+
+    if animOption and animOption.Prop and IsPedArmed(PlayerPedId(), 7) then
+        return EmoteChatMessage("You can't play this animation while armed.")
     end
 
     if ChosenAnimOptions and ChosenAnimOptions.ExitEmote then
@@ -674,5 +690,5 @@ exports("CanCancelEmote", function(State)
 		CanCancel = State == true
 end)
 exports('IsPlayerInAnim', function()
-	return IsInAnimation 
+	return IsInAnimation
 end)
