@@ -19,7 +19,7 @@ if Config.SharedEmotesEnabled then
                     dict, anim, ename = table.unpack(RP.Shared[emotename])
                     TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), emotename)
                     SimpleNotify(Config.Languages[lang]['sentrequestto'] ..
-                        GetPlayerName(target) .. " ~w~(~g~" .. ename .. "~w~)")
+                        target .. " ~w~(~g~" .. ename .. "~w~)")
                 else
                     EmoteChatMessage("'" .. emotename .. "' " .. Config.Languages[lang]['notvalidsharedemote'] .. "")
                 end

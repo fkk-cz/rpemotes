@@ -222,7 +222,7 @@ function AddEmoteMenu(menu)
                 if (distance ~= -1 and distance < 3) then
                     _, _, rename = table.unpack(RP.Shared[ShareTable[index]])
                     TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), ShareTable[index])
-                    SimpleNotify(Config.Languages[lang]['sentrequestto'] .. GetPlayerName(target))
+                    SimpleNotify(Config.Languages[lang]['sentrequestto'] .. target)
                 else
                     SimpleNotify(Config.Languages[lang]['nobodyclose'])
                 end
@@ -234,7 +234,7 @@ function AddEmoteMenu(menu)
             if (distance ~= -1 and distance < 3) then
                 _, _, rename = table.unpack(RP.Dances[DanceTable[index]])
                 TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), DanceTable[index], 'Dances')
-                SimpleNotify(Config.Languages[lang]['sentrequestto'] .. GetPlayerName(target))
+                SimpleNotify(Config.Languages[lang]['sentrequestto'] .. target)
             else
                 SimpleNotify(Config.Languages[lang]['nobodyclose'])
             end
@@ -358,7 +358,7 @@ if Config.Search then
                         if (distance ~= -1 and distance < 3) then
                             _, _, rename = table.unpack(RP.Shared[data.name])
                             TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), data.name)
-                            SimpleNotify(Config.Languages[lang]['sentrequestto'] .. GetPlayerName(target))
+                            SimpleNotify(Config.Languages[lang]['sentrequestto'] .. target)
                         else
                             SimpleNotify(Config.Languages[lang]['nobodyclose'])
                         end
@@ -378,7 +378,7 @@ if Config.Search then
                             if (distance ~= -1 and distance < 3) then
                                 _, _, rename = table.unpack(RP.Dances[data.name])
                                 TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), data.name, 'Dances')
-                                SimpleNotify(Config.Languages[lang]['sentrequestto'] .. GetPlayerName(target))
+                                SimpleNotify(Config.Languages[lang]['sentrequestto'] .. target)
                             else
                                 SimpleNotify(Config.Languages[lang]['nobodyclose'])
                             end
