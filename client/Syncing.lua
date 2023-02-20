@@ -1,4 +1,5 @@
 local isRequestAnim = false
+local requestAnimSource = nil
 local requestedemote = ''
 local targetPlayerId = ''
 
@@ -139,8 +140,9 @@ function CancelSharedEmote(ply)
 end
 
 RegisterNetEvent("ClientEmoteRequestReceive")
-AddEventHandler("ClientEmoteRequestReceive", function(emotename, etype)
+AddEventHandler("ClientEmoteRequestReceive", function(emotename, etype, requestSrc)
     isRequestAnim = true
+    requestAnimSource = requestSrc
     requestedemote = emotename
 
     if etype == 'Dances' then
@@ -158,7 +160,7 @@ Citizen.CreateThread(function()
         Citizen.Wait(5)
         if IsControlJustPressed(1, 246) and isRequestAnim then
             target, distance = GetClosestPlayer()
-            if (distance ~= -1 and distance < 3) then
+            if (distance ~= -1 and distance < 3) and requestAnimSource == GetPlayerServerId(target) then
                 if RP.Shared[requestedemote] ~= nil then
                     _, _, _, otheremote = table.unpack(RP.Shared[requestedemote])
                 elseif RP.Dances[requestedemote] ~= nil then
@@ -167,12 +169,14 @@ Citizen.CreateThread(function()
                 if otheremote == nil then otheremote = requestedemote end
                 TriggerServerEvent("ServerValidEmote", GetPlayerServerId(target), requestedemote, otheremote)
                 isRequestAnim = false
+                requestAnimSource = nil
             else
                 SimpleNotify(Config.Languages[lang]['nobodyclose'])
             end
         elseif IsControlJustPressed(1, 182) and isRequestAnim then
             SimpleNotify(Config.Languages[lang]['refuseemote'])
             isRequestAnim = false
+            requestAnimSource = nil
         end
     end
 end)

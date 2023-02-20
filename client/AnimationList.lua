@@ -13308,25 +13308,25 @@ RP.PropEmotes = {
             EmoteMoving = true
         }
     },
-    ["conehead"] = {
-        "move_m@drunk@verydrunk_idles@",
-        "fidget_07",
-        "Cone Head ",
-        AnimationOptions = {
-            Prop = "prop_roadcone02b",
-            PropBone = 31086,
-            PropPlacement = {
-                0.0500,
-                0.0200,
-                -0.000,
-                30.0000004,
-                90.0,
-                0.0
-            },
-            EmoteLoop = true,
-            EmoteMoving = true
-        }
-    },
+    -- ["conehead"] = {
+    --     "move_m@drunk@verydrunk_idles@",
+    --     "fidget_07",
+    --     "Cone Head ",
+    --     AnimationOptions = {
+    --         Prop = "prop_roadcone02b",
+    --         PropBone = 31086,
+    --         PropPlacement = {
+    --             0.0500,
+    --             0.0200,
+    --             -0.000,
+    --             30.0000004,
+    --             90.0,
+    --             0.0
+    --         },
+    --         EmoteLoop = true,
+    --         EmoteMoving = true
+    --     }
+    -- },
     ["foodtraya"] = {
         "anim@heists@box_carry@",
         "idle",
@@ -17090,25 +17090,25 @@ RP.PropEmotes = {
             EmoteMoving = true
         }
     },
-    ["potplant3"] = {
-        "anim@heists@box_carry@",
-        "idle",
-        "Pot Plant (Large)",
-        AnimationOptions = {
-            Prop = "bkr_prop_weed_lrg_01b",
-            PropBone = 60309,
-            PropPlacement = {
-                0.138,
-                -0.05,
-                0.23,
-                -50.0,
-                290.0,
-                0.0
-            },
-            EmoteLoop = true,
-            EmoteMoving = true
-        }
-    },
+    -- ["potplant3"] = {
+    --     "anim@heists@box_carry@",
+    --     "idle",
+    --     "Pot Plant (Large)",
+    --     AnimationOptions = {
+    --         Prop = "bkr_prop_weed_lrg_01b",
+    --         PropBone = 60309,
+    --         PropPlacement = {
+    --             0.138,
+    --             -0.05,
+    --             0.23,
+    --             -50.0,
+    --             290.0,
+    --             0.0
+    --         },
+    --         EmoteLoop = true,
+    --         EmoteMoving = true
+    --     }
+    -- },
     ["weedbucket"] = {
         "anim@heists@box_carry@",
         "idle",
@@ -18809,44 +18809,44 @@ RP.PropEmotes = {
             EmoteMoving = true
         }
     },
-    ["shield"] = {
-        "beachanims@molly",
-        "beachanim_surf_clip",
-        "Shield",
-        AnimationOptions = {
-            Prop = "prop_riot_shield",
-            PropBone = 18905,
-            PropPlacement = {
-                -0.04,
-                -0.06,
-                0.0,
-                4.04,
-                108.17,
-                -17.48
-            },
-            EmoteLoop = true,
-            EmoteMoving = true
-        }
-    },
-    ["shield2"] = {
-        "beachanims@molly",
-        "beachanim_surf_clip",
-        "Shield 2",
-        AnimationOptions = {
-            Prop = "prop_ballistic_shield",
-            PropBone = 18905,
-            PropPlacement = {
-                0.01,
-                -0.1,
-                -0.07,
-                1.83,
-                105.38,
-                -10.14
-            },
-            EmoteLoop = true,
-            EmoteMoving = true
-        }
-    },
+    -- ["shield"] = {
+    --     "beachanims@molly",
+    --     "beachanim_surf_clip",
+    --     "Shield",
+    --     AnimationOptions = {
+    --         Prop = "prop_riot_shield",
+    --         PropBone = 18905,
+    --         PropPlacement = {
+    --             -0.04,
+    --             -0.06,
+    --             0.0,
+    --             4.04,
+    --             108.17,
+    --             -17.48
+    --         },
+    --         EmoteLoop = true,
+    --         EmoteMoving = true
+    --     }
+    -- },
+    -- ["shield2"] = {
+    --     "beachanims@molly",
+    --     "beachanim_surf_clip",
+    --     "Shield 2",
+    --     AnimationOptions = {
+    --         Prop = "prop_ballistic_shield",
+    --         PropBone = 18905,
+    --         PropPlacement = {
+    --             0.01,
+    --             -0.1,
+    --             -0.07,
+    --             1.83,
+    --             105.38,
+    --             -10.14
+    --         },
+    --         EmoteLoop = true,
+    --         EmoteMoving = true
+    --     }
+    -- },
     ["cofpose"] = {
         "chocoholic@single23",
         "single23_clip",

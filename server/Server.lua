@@ -18,7 +18,15 @@ RegisterNetEvent("ServerEmoteRequest", function(target, emotename, etype)
         return
     end
 
-    TriggerClientEvent("ClientEmoteRequestReceive", target, emotename, etype)
+    if GetEntityHealth(tped) == 0 then
+        return
+    end
+
+    if DoesEntityExist(GetVehiclePedIsIn(tped, false)) then
+        return
+    end
+
+    TriggerClientEvent("ClientEmoteRequestReceive", target, emotename, etype, source)
 end)
 
 RegisterNetEvent("ServerValidEmote", function(target, requestedemote, otheremote)
@@ -34,6 +42,14 @@ RegisterNetEvent("ServerValidEmote", function(target, requestedemote, otheremote
     local distance = #(pedcoord - targetcoord)
 
     if distance > 3 then
+        return
+    end
+
+    if GetEntityHealth(tped) == 0 then
+        return
+    end
+
+    if DoesEntityExist(GetVehiclePedIsIn(tped, false)) then
         return
     end
 
