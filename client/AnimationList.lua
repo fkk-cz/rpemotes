@@ -1629,18 +1629,6 @@ RP.Shared = {
 
         }
     },
-    ["kisscuteneck2"] = {
-        "genesismods_kissme@kissfemale8",
-        "kissfemale8",
-        "Kiss Cute - Neck (Female)",
-        "kisscuteneck",
-        AnimationOptions = {
-            EmoteMoving = false,
-            EmoteLoop = true,
-            --SyncOffsetFront = 0.05,
-
-        }
-    },
     ["kisslips"] = {
         "chocoholic@couple13",
         "couple13_clip",
@@ -9634,7 +9622,6 @@ RP.PropEmotes = {
             EmoteLoop = true,
             PtfxAsset = "scr_agencyheistb",
             PtfxName = "scr_agency3b_elec_box",
-            PtfxNoProp = true,
             PtfxNoProp = true,
             PtfxBone = 31086,
             PtfxPlacement = {
@@ -18645,7 +18632,7 @@ RP.PropEmotes = {
     ["skatehold2"] = { -- Emote by Molly
         "beachanims@molly",
         "beachanim_surf_clip",
-        "Skatebboard - Hold Female 2",
+        "Skateboard - Hold Female 2",
         AnimationOptions = {
             Prop = "taymckenzienz_skateboard01",
             PropBone = 28422,
@@ -18712,7 +18699,7 @@ RP.PropEmotes = {
     ["skatehold5"] = { -- Emote by Molly
         "beachanims@molly",
         "beachanim_surf_clip",
-        "Skatebboard - Hold Male 2",
+        "Skateboard - Hold Male 2",
         AnimationOptions = {
             Prop = "taymckenzienz_skateboard02",
             PropBone = 28422,
