@@ -47,7 +47,7 @@ if Config.WalkingStylesEnabled and Config.PersistentWalk then
     AddEventHandler('playerSpawned', function()
         local kvp = GetResourceKvpString("walkstyle")
 
-        if kvp ~= nil then
+        if kvp ~= nil and tableHasKey(RP.Walks, kvp) then
             WalkMenuStart(kvp)
         end
     end)
