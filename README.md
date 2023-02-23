@@ -110,6 +110,8 @@ Languages can be selected and / or added in the config.lua.
 
 - Standalone exports
 
+- Props Extractor
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Exports
@@ -288,6 +290,37 @@ Framework = false,
 *You may need to alter some code within qbcore to work with RPEmotes.*
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Prop Extractor ⬇️
+
+Many people have expressed concerns over anticheat scripts kicking or banning their community members due to the fact RPEmotes uses props and anticheats detecting said props being spawned.
+
+To make server owners' jobs a little easier, we have added a prop extractor command that you can enter into the server console which will automate a file inside the RPEmotes resource folder appropriately named, `.prop_list.lua`.
+
+### Command:
+
+`emoteextract`
+
+```lua
+
+Available output formats:
+1 - 'prop_name',
+2 - "prop_name",
+3 - prop_name
+
+Command usage example: emoteextract 1
+```
+
+<img src="screenshots/extractor.png" width="700">
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 
 # Screenshots 📸
 
@@ -515,7 +548,9 @@ A huge thank  you to the following people for their amazing contributions made t
 
 - Thank you to Chocoholic Animations for the custom animations
 
-- Thank you to [CrunchyCat](https://www.gta5-mods.com/users/crunchycat) for the custom animations 
+- Thank you to [CrunchyCat](https://www.gta5-mods.com/users/crunchycat) for the custom animations
+
+- Thank you [KayKayMods](https://discord.gg/5bYQVWVaxG) for the custom props
 
 - Thank you to you, the community for being patient, showing love and appreciation, and for providing translations.
 
