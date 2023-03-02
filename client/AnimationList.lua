@@ -8620,16 +8620,16 @@ RP.Emotes = {
         "WORLD_HUMAN_HUMAN_STATUE",
         "Statue"
     },
-    ["sunbathe3"] = {
-        "Scenario",
-        "WORLD_HUMAN_SUNBATHE",
-        "Sunbathe 3"
-    },
-    ["sunbatheback"] = {
-        "Scenario",
-        "WORLD_HUMAN_SUNBATHE_BACK",
-        "Sunbathe Back"
-    },
+    -- ["sunbathe3"] = {
+    --     "Scenario",
+    --     "WORLD_HUMAN_SUNBATHE",
+    --     "Sunbathe 3"
+    -- },
+    -- ["sunbatheback"] = {
+    --     "Scenario",
+    --     "WORLD_HUMAN_SUNBATHE_BACK",
+    --     "Sunbathe Back"
+    -- },
     ["weld"] = {
         "Scenario",
         "WORLD_HUMAN_WELDING",
