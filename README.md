@@ -26,6 +26,10 @@ RpEmotes is a community driven FiveM emote menu allowing players to express them
 
 * Brazilian Portuguese 🇧🇷
 
+* Chinese Simplified 🇨🇳
+
+* Chinese Traditional 🇨🇳
+
 * Czech 🇨🇿
 
 * Danish 🇩🇰
@@ -61,6 +65,8 @@ RpEmotes is a community driven FiveM emote menu allowing players to express them
 * Swedish 🇸🇪
 
 * Turkish 🇹🇷
+
+* Vietnamese 🇻🇳
 
 All languages were translated or contributed by you, the community with the odd exception of using Google Translate.
 
@@ -551,6 +557,8 @@ A huge thank  you to the following people for their amazing contributions made t
 - Thank you to [CrunchyCat](https://www.gta5-mods.com/users/crunchycat) for the custom animations
 
 - Thank you [KayKayMods](https://discord.gg/5bYQVWVaxG) for the custom props
+
+- Thank you to [MonkeyWhisper](https://github.com/MonkeyWhisper) and [Project Sloth](https://github.com/Project-Sloth) for the custom milkshake props
 
 - Thank you to you, the community for being patient, showing love and appreciation, and for providing translations.
 
