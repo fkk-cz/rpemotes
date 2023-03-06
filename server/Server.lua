@@ -26,6 +26,11 @@ RegisterNetEvent("ServerEmoteRequest", function(target, emotename, etype)
         return
     end
 
+    if Player(source).state.comserv or Player(source).state.inJail then
+        TriggerClientEvent("esx:showNotification", source, "You cannot use shared emotes in comserv or jail.")
+        return
+    end
+
     TriggerClientEvent("ClientEmoteRequestReceive", target, emotename, etype, source)
 end)
 
