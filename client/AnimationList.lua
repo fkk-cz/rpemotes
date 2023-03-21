@@ -8430,11 +8430,11 @@ RP.Emotes = {
         "PROP_HUMAN_ATM",
         "ATM"
     },
-    ["bbq"] = {
-        "MaleScenario",
-        "PROP_HUMAN_BBQ",
-        "BBQ"
-    },
+    -- ["bbq"] = {
+    --     "MaleScenario",
+    --     "PROP_HUMAN_BBQ",
+    --     "BBQ"
+    -- },
     ["bumbin"] = {
         "Scenario",
         "PROP_HUMAN_BUM_BIN",
@@ -14512,25 +14512,25 @@ RP.PropEmotes = {
             PtfxCanHold = true
         }
     },
-    ["bbqf"] = {
-        "amb@prop_human_bbq@male@idle_a",
-        "idle_b",
-        "BBQ (Female)",
-        AnimationOptions = {
-            Prop = "prop_fish_slice_01",
-            PropBone = 28422,
-            PropPlacement = {
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0
-            },
-            EmoteLoop = true,
-            EmoteMoving = true
-        }
-    },
+    -- ["bbqf"] = {
+    --     "amb@prop_human_bbq@male@idle_a",
+    --     "idle_b",
+    --     "BBQ (Female)",
+    --     AnimationOptions = {
+    --         Prop = "prop_fish_slice_01",
+    --         PropBone = 28422,
+    --         PropPlacement = {
+    --             0.0,
+    --             0.0,
+    --             0.0,
+    --             0.0,
+    --             0.0,
+    --             0.0
+    --         },
+    --         EmoteLoop = true,
+    --         EmoteMoving = true
+    --     }
+    -- },
     ["pump"] = {
         "missfbi4prepp1",
         "idle",

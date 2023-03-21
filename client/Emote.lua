@@ -509,7 +509,7 @@ function OnEmotePlay(EmoteName, textureVariation)
         return
     end
 
-    if IsPedBeingStunned(PlayerPedId()) then
+    if IsPedBeingStunned(PlayerPedId()) or IsPedFalling(PlayerPedId()) or IsPedRagdoll(PlayerPedId()) then
         return
     end
 
