@@ -5468,15 +5468,15 @@ RP.Emotes = {
             EmoteLoop = true
         }
     },
-    ["crossarms"] = {
-        "amb@world_human_hang_out_street@female_arms_crossed@idle_a",
-        "idle_a",
-        "Crossarms",
-        AnimationOptions = {
-            EmoteLoop = true,
-            EmoteMoving = true
-        }
-    },
+    -- ["crossarms"] = {
+    --     "amb@world_human_hang_out_street@female_arms_crossed@idle_a",
+    --     "idle_a",
+    --     "Crossarms",
+    --     AnimationOptions = {
+    --         EmoteLoop = true,
+    --         EmoteMoving = true
+    --     }
+    -- },
     ["crossarms2"] = {
         "amb@world_human_hang_out_street@male_c@idle_a",
         "idle_b",
@@ -5485,15 +5485,15 @@ RP.Emotes = {
             EmoteMoving = true
         }
     },
-    ["crossarms3"] = {
-        "anim@heists@heist_corona@single_team",
-        "single_team_loop_boss",
-        "Crossarms 3",
-        AnimationOptions = {
-            EmoteLoop = true,
-            EmoteMoving = true
-        }
-    },
+    -- ["crossarms3"] = {
+    --     "anim@heists@heist_corona@single_team",
+    --     "single_team_loop_boss",
+    --     "Crossarms 3",
+    --     AnimationOptions = {
+    --         EmoteLoop = true,
+    --         EmoteMoving = true
+    --     }
+    -- },
     ["crossarms4"] = {
         "random@street_race",
         "_car_b_lookout",
@@ -5503,33 +5503,33 @@ RP.Emotes = {
             EmoteMoving = true
         }
     },
-    ["crossarms5"] = {
-        "anim@amb@nightclub@peds@",
-        "rcmme_amanda1_stand_loop_cop",
-        "Crossarms 5",
-        AnimationOptions = {
-            EmoteLoop = true,
-            EmoteMoving = true
-        }
-    },
-    ["foldarms2"] = {
-        "anim@amb@nightclub@peds@",
-        "rcmme_amanda1_stand_loop_cop",
-        "Fold Arms 2",
-        AnimationOptions = {
-            EmoteLoop = true,
-            EmoteMoving = true
-        }
-    },
-    ["crossarms6"] = {
-        "random@shop_gunstore",
-        "_idle",
-        "Crossarms 6",
-        AnimationOptions = {
-            EmoteLoop = true,
-            EmoteMoving = true
-        }
-    },
+    -- ["crossarms5"] = {
+    --     "anim@amb@nightclub@peds@",
+    --     "rcmme_amanda1_stand_loop_cop",
+    --     "Crossarms 5",
+    --     AnimationOptions = {
+    --         EmoteLoop = true,
+    --         EmoteMoving = true
+    --     }
+    -- },
+    -- ["foldarms2"] = {
+    --     "anim@amb@nightclub@peds@",
+    --     "rcmme_amanda1_stand_loop_cop",
+    --     "Fold Arms 2",
+    --     AnimationOptions = {
+    --         EmoteLoop = true,
+    --         EmoteMoving = true
+    --     }
+    -- },
+    -- ["crossarms6"] = {
+    --     "random@shop_gunstore",
+    --     "_idle",
+    --     "Crossarms 6",
+    --     AnimationOptions = {
+    --         EmoteLoop = true,
+    --         EmoteMoving = true
+    --     }
+    -- },
     ["foldarms"] = {
         "anim@amb@business@bgen@bgen_no_work@",
         "stand_phone_phoneputdown_idle_nowork",
@@ -8440,11 +8440,11 @@ RP.Emotes = {
         "PROP_HUMAN_BUM_BIN",
         "Bum Bin"
     },
-    ["bumsleep"] = {
-        "Scenario",
-        "WORLD_HUMAN_BUM_SLUMPED",
-        "Bum Sleep"
-    },
+    -- ["bumsleep"] = {
+    --     "Scenario",
+    --     "WORLD_HUMAN_BUM_SLUMPED",
+    --     "Bum Sleep"
+    -- },
     ["cheer"] = {
         "Scenario",
         "WORLD_HUMAN_CHEERING",
