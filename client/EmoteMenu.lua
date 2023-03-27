@@ -555,6 +555,9 @@ function AddInfoMenu(menu)
 end
 
 function OpenEmoteMenu()
+    if LocalPlayer.state.handcuffed then
+        return
+    end
     if _menuPool:IsAnyMenuOpen() then
         _menuPool:CloseAllMenus()
     else
@@ -600,4 +603,11 @@ end)
 RegisterNetEvent("rp:RecieveMenu") -- For opening the emote menu from another resource.
 AddEventHandler("rp:RecieveMenu", function()
     OpenEmoteMenu()
+end)
+
+RegisterNetEvent("rp:CloseMenu") -- Force close menu from another resource
+AddEventHandler("rp:CloseMenu", function()
+    if _menuPool:IsAnyMenuOpen() then
+        _menuPool:CloseAllMenus()
+    end
 end)
