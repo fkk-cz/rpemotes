@@ -505,7 +505,7 @@ function OnEmotePlay(EmoteName, textureVariation)
         return
     end
 
-    if LocalPlayer.state.blockClearTasks or LocalPlayer.state.handcuffed or LocalPlayer.state.inJail or LocalPlayer.state.inCommunityService then
+    if LocalPlayer.state.blockClearTasks or LocalPlayer.state.handcuffed or LocalPlayer.state.inJail or LocalPlayer.state.inCommunityService or LocalPlayer.state.drunk then
         return
     end
 

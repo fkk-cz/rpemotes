@@ -1,5 +1,6 @@
 function WalkMenuStart(name)
     if Config.PersistentWalk then SetResourceKvp("walkstyle", name) end
+    if LocalPlayer.state.drunk then return end
     RequestWalking(name)
     SetPedMovementClipset(PlayerPedId(), name, 0.2)
     RemoveAnimSet(name)
@@ -23,6 +24,10 @@ end
 
 function WalkCommandStart(source, args, raw)
     local name = firstToUpper(string.lower(args[1]))
+
+    if LocalPlayer.state.drunk then
+        return
+    end
 
     if name == "Reset" then
         ResetPedMovementClipset(PlayerPedId())

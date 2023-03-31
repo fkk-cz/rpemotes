@@ -8842,15 +8842,15 @@ RP.Emotes = {
             EmoteMoving = false
         }
     },
-    ["sexypose3"] = { -- Custom Emote By Little Spoon
-        "littlespoon@sexy005",
-        "sexy005",
-        "Sexy Pose 3",
-        AnimationOptions = {
-            EmoteLoop = true,
-            EmoteMoving = false
-        }
-    },
+    -- ["sexypose3"] = { -- Custom Emote By Little Spoon
+    --     "littlespoon@sexy005",
+    --     "sexy005",
+    --     "Sexy Pose 3",
+    --     AnimationOptions = {
+    --         EmoteLoop = true,
+    --         EmoteMoving = false
+    --     }
+    -- },
     ["sexypose4"] = { -- Custom Emote By Little Spoon
         "littlespoon@sexy006",
         "sexy006",
