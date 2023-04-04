@@ -56,7 +56,7 @@ local function RunAnimationThread()
 
             if IsInAnimation then
                 sleep = 0
-                if IsPlayerAiming(playerId) then
+                if IsPlayerAiming(playerId) or (IsEntityAttachedToAnyPed(PlayerPedId()) and IsPedInAnyVehicle(PlayerPedId(), true)) then
                     EmoteCancel()
                 end
             end
