@@ -56,7 +56,20 @@ local function RunAnimationThread()
 
             if IsInAnimation then
                 sleep = 0
-                if IsPlayerAiming(playerId) or (IsEntityAttachedToAnyPed(PlayerPedId()) and IsPedInAnyVehicle(PlayerPedId(), true)) then
+
+                local plyPed = PlayerPedId()
+                local bAttached = false
+                local activePlayers = GetActivePlayers()
+                for i = 1, #activePlayers do
+                    if activePlayers[i] ~= PlayerId() and DoesEntityExist(GetPlayerPed(activePlayers[i])) then
+                        if GetEntityAttachedTo(GetPlayerPed(activePlayers[i])) == plyPed then
+                            bAttached = true
+                            break
+                        end
+                    end
+                end
+
+                if IsPlayerAiming(playerId) or (bAttached and IsPedInAnyVehicle(PlayerPedId(), true)) then
                     EmoteCancel()
                 end
             end
