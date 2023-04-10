@@ -31,6 +31,11 @@ RegisterNetEvent("ServerEmoteRequest", function(target, emotename, etype)
         return
     end
 
+    if Player(source).state.syncedEmotesDisabled or Player(target).state.syncedEmotesDisabled then
+        TriggerClientEvent("esx:showNotification", source, "You cannot request synced emotes here.")
+        return
+    end
+
     TriggerClientEvent("ClientEmoteRequestReceive", target, emotename, etype, source)
 end)
 
@@ -55,6 +60,11 @@ RegisterNetEvent("ServerValidEmote", function(target, requestedemote, otheremote
     end
 
     if DoesEntityExist(GetVehiclePedIsIn(tped, false)) then
+        return
+    end
+
+    if Player(source).state.syncedEmotesDisabled or Player(target).state.syncedEmotesDisabled then
+        TriggerClientEvent("esx:showNotification", source, "You cannot accept synced emotes here.")
         return
     end
 
