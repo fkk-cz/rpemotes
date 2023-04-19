@@ -59,7 +59,7 @@ RegisterNetEvent("ServerValidEmote", function(target, requestedemote, otheremote
         return
     end
 
-    if DoesEntityExist(GetVehiclePedIsIn(tped, false)) then
+    if DoesEntityExist(GetVehiclePedIsIn(tped, false)) or DoesEntityExist(GetVehiclePedIsIn(ped, false)) then
         return
     end
 
