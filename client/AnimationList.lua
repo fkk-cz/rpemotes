@@ -8497,33 +8497,6 @@ RP.Emotes = {
             EmoteLoop = true
         }
     },
-    ["gympose2"] = { -- Custom Emote By Amnilka
-        "frabi@malepose@solo@firstsport",
-        "pose_sport_005",
-        "Gym Pose 2 - One Handed Push Up",
-        AnimationOptions = {
-
-            EmoteLoop = true
-        }
-    },
-    ["gympose3"] = { -- Custom Female Emote By Frabi
-        "frabi@femalepose@solo@firstsport",
-        "fem_pose_sport_004",
-        "Gym Pose 3 - Planking Pose",
-        AnimationOptions = {
-
-            EmoteLoop = true
-        }
-    },
-    ["gympose4"] = { -- Custom Female Emote By Frabi
-        "frabi@femalepose@solo@firstsport",
-        "fem_pose_sport_005",
-        "Gym Pose 4 - Sit Ups Pose",
-        AnimationOptions = {
-
-            EmoteLoop = true
-        }
-    },
     ["guard"] = {
         "Scenario",
         "WORLD_HUMAN_GUARD_STAND",
