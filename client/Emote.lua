@@ -451,9 +451,10 @@ function LoadPropDict(model)
 end
 
 function DestroyAllProps()
-    for _, v in pairs(PlayerProps) do
-        DeleteEntity(v)
-    end
+    -- for _, v in pairs(PlayerProps) do
+    --     DeleteEntity(v)
+    -- end
+    LocalPlayer.state:set("emoteProps", nil, true)
     PlayerHasProp = false
     DebugPrint("Destroyed Props")
 end
@@ -526,6 +527,18 @@ function OnEmotePlay(EmoteName, textureVariation)
         return
     end
 
+    if ChosenDict == "MaleScenario" or "Scenario" then
+        if ScenarioCooldown then
+            EmoteChatMessage("You cannot play animations so frequently.")
+            return
+        end
+    end
+
+    if AnimationCooldown then
+        EmoteChatMessage("You cannot play animations so frequently.")
+        return
+    end
+
     if IsPedBeingStunned(PlayerPedId()) or IsPedFalling(PlayerPedId()) or IsPedRagdoll(PlayerPedId()) then
         return
     end
@@ -577,6 +590,8 @@ function OnEmotePlay(EmoteName, textureVariation)
         CheckGender()
         if ChosenDict == "MaleScenario" then if InVehicle then return end
             if PlayerGender == "male" then
+                ScenarioCooldown = true
+                SetTimeout(2000, function() ScenarioCooldown = false end)
                 ClearPedTasks(PlayerPedId())
                 TaskStartScenarioInPlace(PlayerPedId(), ChosenAnimation, 0, true)
                 DebugPrint("Playing scenario = (" .. ChosenAnimation .. ")")
@@ -587,6 +602,8 @@ function OnEmotePlay(EmoteName, textureVariation)
             end
             return
         elseif ChosenDict == "ScenarioObject" then if InVehicle then return end
+            ScenarioCooldown = true
+            SetTimeout(2000, function() ScenarioCooldown = false end)
             BehindPlayer = GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 0 - 0.5, -0.5);
             ClearPedTasks(PlayerPedId())
             TaskStartScenarioAtPosition(PlayerPedId(), ChosenAnimation, BehindPlayer['x'], BehindPlayer['y'], BehindPlayer['z'], GetEntityHeading(PlayerPedId()), 0, true, false)
@@ -595,6 +612,8 @@ function OnEmotePlay(EmoteName, textureVariation)
             RunAnimationThread()
             return
         elseif ChosenDict == "Scenario" then if InVehicle then return end
+            ScenarioCooldown = true
+            SetTimeout(2000, function() ScenarioCooldown = false end)
             ClearPedTasks(PlayerPedId())
             TaskStartScenarioInPlace(PlayerPedId(), ChosenAnimation, 0, true)
             DebugPrint("Playing scenario = (" .. ChosenAnimation .. ")")
@@ -662,6 +681,8 @@ function OnEmotePlay(EmoteName, textureVariation)
         end
     end
 
+    AnimationCooldown = true
+    SetTimeout(1000, function() AnimationCooldown = false end)
     TaskPlayAnim(PlayerPedId(), ChosenDict, ChosenAnimation, 5.0, 5.0, AnimationDuration, MovementType, 0, false, false, false)
     RemoveAnimDict(ChosenDict)
     IsInAnimation = true
@@ -682,13 +703,28 @@ function OnEmotePlay(EmoteName, textureVariation)
             SecondPropEmote = false
         end
         Wait(AttachWait)
-        if not AddPropToPlayer(PropName, PropBone, PropPl1, PropPl2, PropPl3, PropPl4, PropPl5, PropPl6, textureVariation) then return end
+
+        local data = {
+            prop1 = {
+                name = PropName,
+                boneIndex = PropBone,
+                offset = vector3(PropPl1, PropPl2, PropPl3),
+                rotation = vector3(PropPl4, PropPl5, PropPl6),
+                texture = textureVariation
+            }
+        }
+
         if SecondPropEmote then
-        if not AddPropToPlayer(SecondPropName, SecondPropBone, SecondPropPl1, SecondPropPl2, SecondPropPl3, SecondPropPl4, SecondPropPl5, SecondPropPl6, textureVariation) then
-                DestroyAllProps()
-                return
-            end
+            data.prop2 = {
+                name = SecondPropName,
+                boneIndex = SecondPropBone,
+                offset = vector3(SecondPropPl1, SecondPropPl2, SecondPropPl3),
+                rotation = vector3(SecondPropPl4, SecondPropPl5, SecondPropPl6),
+                texture = textureVariation
+            }
         end
+
+        LocalPlayer.state:set("emoteProps", data, true)
 
         -- Ptfx is on the prop, then we need to sync it
         if animOption.PtfxAsset and not PtfxNoProp then
@@ -697,6 +733,91 @@ function OnEmotePlay(EmoteName, textureVariation)
     end
 end
 
+AddStateBagChangeHandler("emoteProps", nil, function(bagName, key, value, _reserved, replicated)
+    if replicated then return end
+
+    local player = GetPlayerFromStateBagName(bagName)
+    if player == 0 then return end
+
+    local serverId = GetPlayerServerId(player)
+    if PlayerProps[serverId] then
+        local objects = PlayerProps[serverId]
+        for i = 1, #objects do
+            if NetworkGetEntityIsLocal(objects[i]) then
+                DeleteEntity(objects[i])
+            end
+        end
+        PlayerProps[serverId] = nil
+    end
+
+    if not value or type(value) ~= "table" then return end
+
+    local plyPed = GetPlayerPed(player)
+    if not DoesEntityExist(plyPed) then return end
+
+    local prop1 = value.prop1.name
+    if not IsModelValid(prop1) then
+        DebugPrint(tostring(prop1).." is not a valid model!")
+        return
+    end
+
+    if not HasModelLoaded(prop1) then
+        LoadPropDict(prop1)
+    end
+
+    local coords = GetEntityCoords(plyPed)
+
+    local propObj1 = CreateObject(joaat(prop1), coords.x, coords.y, coords.z + 0.2, false, false, false)
+    if value.prop1.textureVariation ~= nil then
+        SetObjectTextureVariation(prop, value.prop1.textureVariation)
+    end
+    AttachEntityToEntity(propObj1, plyPed, GetPedBoneIndex(plyPed, value.prop1.boneIndex), value.prop1.offset, value.prop1.rotation, true, true, false, true, 1, true)
+    PlayerProps[serverId][1] = propObj1
+
+    if plyPed == PlayerPedId() then
+        PlayerHasProp = true
+    end
+
+    SetModelAsNoLongerNeeded(prop1)
+
+    if value.prop2 then
+        local prop2 = value.prop2.name
+        if not IsModelValid(prop2) then
+            DebugPrint(tostring(prop2).." is not a valid model!")
+            return
+        end
+
+        if not HasModelLoaded(prop2) then
+            LoadPropDict(prop2)
+        end
+
+        local propObj2 = CreateObject(joaat(prop2), coords.x, coords.y, coords.z + 0.2, false, false, false)
+        if value.prop2.textureVariation ~= nil then
+            SetObjectTextureVariation(prop, value.prop2.textureVariation)
+        end
+        AttachEntityToEntity(propObj2, plyPed, GetPedBoneIndex(plyPed, value.prop2.boneIndex), value.prop2.offset, value.prop2.rotation, true, true, false, true, 1, true)
+        PlayerProps[serverId][2] = propObj2
+
+        SetModelAsNoLongerNeeded(prop2)
+    end
+end)
+
+RegisterNetEvent(
+    "onPlayerDropped",
+    function(serverId)
+        if PlayerProps[serverId] then
+            local objects = PlayerProps[serverId]
+            for i = 1, #objects do
+                local ent = objects[i]
+                if NetworkGetEntityIsLocal(ent) then
+                    DeleteEntity(ent)
+                end
+            end
+
+            PlayerProps[serverId] = nil
+        end
+    end
+)
 
 -----------------------------------------------------------------------------------------------------
 ------ Some exports to make the script more standalone! (by Clem76) ---------------------------------
