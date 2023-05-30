@@ -772,7 +772,9 @@ AddStateBagChangeHandler("emoteProps", nil, function(bagName, key, value, _reser
         SetObjectTextureVariation(prop, value.prop1.textureVariation)
     end
     AttachEntityToEntity(propObj1, plyPed, GetPedBoneIndex(plyPed, value.prop1.boneIndex), value.prop1.offset, value.prop1.rotation, true, true, false, true, 1, true)
-    PlayerProps[serverId][1] = propObj1
+    PlayerProps[serverId] = {
+        [1] = propObj1
+    }
 
     if plyPed == PlayerPedId() then
         PlayerHasProp = true
