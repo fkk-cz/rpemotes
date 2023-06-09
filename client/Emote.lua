@@ -523,7 +523,7 @@ function OnEmotePlay(EmoteName, textureVariation)
         return
     end
 
-    if LocalPlayer.state.blockClearTasks or LocalPlayer.state.handcuffed or LocalPlayer.state.inJail or LocalPlayer.state.inCommunityService or LocalPlayer.state.drunk then
+    if LocalPlayer.state.blockClearTasks or LocalPlayer.state.handcuffed or LocalPlayer.state.inJail or LocalPlayer.state.inCommunityService or LocalPlayer.state.inHostileZone then
         return
     end
 
@@ -541,6 +541,10 @@ function OnEmotePlay(EmoteName, textureVariation)
 
     if IsPedBeingStunned(PlayerPedId()) or IsPedFalling(PlayerPedId()) or IsPedRagdoll(PlayerPedId()) then
         return
+    end
+
+    if IsPedArmed(PlayerPedId(), 7) then
+        return EmoteChatMessage("You can't play this animation while armed.")
     end
 
     if PlayerHasProp and IsPedArmed(PlayerPedId(), 7) then
