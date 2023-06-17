@@ -74,7 +74,7 @@ Config = {
     CrouchKeybind = 'lcontrol', -- The default crouch keybind, get the button string here: https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     CrouchOverride = false, -- If true, you won't enter stealth mode even if the crouch key and the "duck" key are the same.
     -- If crawling should be enabled.
-    CrawlEnabled = true,
+    CrawlEnabled = false,
     CrawlKeybindEnabled = true, -- If true, crawling will use keybinds.
     CrawlKeybind = 'rcontrol', -- The default crawl keybind, get the button string here: https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     -- Check for updates
