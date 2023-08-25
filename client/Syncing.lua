@@ -134,11 +134,6 @@ end)
 
 function CancelSharedEmote(ply)
     if targetPlayerId then
-        local targetPed = GetPlayerPed(GetPlayerFromServerId(targetPlayerId))
-        if DoesEntityExist(targetPed) then
-            local coords = GetEntityCoords(targetPed)
-            SetEntityCoords(PlayerPedId(), coords.x, coords.y, coords.z, true, false, false, false) -- Prevent using synced emotes to go through doors, walls, etc.
-        end
         TriggerServerEvent("ServerEmoteCancel", targetPlayerId)
         targetPlayerId = nil
     end
