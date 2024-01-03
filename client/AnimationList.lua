@@ -19405,4 +19405,85 @@ RP.PropEmotes = {
             EmoteMoving = true
         }
     },
+    ["handrestbelt"] = {
+        "anim@hand_rest_belt",
+        "cop_idle",
+        "Hand Rest Belt",
+        AnimationOptions = {
+            EmoteLoop = true,
+            EmoteMoving = false,
+        }
+    },
+    ["copradiopose"] = {
+        "anim@cop_radio_pose",
+        "holding_radio",
+        "Holding Radio",
+        AnimationOptions = {
+            EmoteLoop = true,
+            EmoteMoving = false,
+        }
+    },
+    ["handrestholster"] = {
+        "anim@hand_rest_holster",
+        "hand_rest",
+        "Hand Rest",
+        AnimationOptions = {
+            EmoteLoop = true,
+            EmoteMoving = false,
+        }
+    },
+    ["copposeexcorting"] = {
+        "anim@cop_pose_escorting",
+        "escorting_rifle",
+        "Escorting Crook",
+        AnimationOptions = {
+            EmoteLoop = true,
+            EmoteMoving = false,
+        }
+    },
+    ["coppose"] = {
+        "anim@cop_pose",
+        "pullout_gun",
+        "Pullout From Holster",
+        AnimationOptions = {
+            EmoteLoop = true,
+            EmoteMoving = false,
+        }
+    },
+    ["copmicpose001"] = {
+        "anim@cop_mic_pose_001",
+        "chest_mic",
+        "Chest Mic Pose 1",
+        AnimationOptions = {
+            EmoteLoop = true,
+            EmoteMoving = false,
+        }
+    },
+    ["copmicpose002"] = {
+        "anim@cop_mic_pose_002",
+        "chest_mic",
+        "Chest Mic Pose 2",
+        AnimationOptions = {
+            EmoteLoop = true,
+            EmoteMoving = false,
+        }
+    },
+    ["copmicpose0021"] = {
+        "anim@cop_mic_pose_002_1",
+        "chest_mic_pose",
+        "Chest Mic Pose 3",
+        AnimationOptions = {
+            EmoteLoop = true,
+            EmoteMoving = false,
+        }
+    },
+    ["copmicpose0022"] = {
+        "anim@cop_mic_pose_002_2",
+        "chest_mic_02",
+        "Chest Mic Pose 4",
+        AnimationOptions = {
+            EmoteLoop = true,
+            EmoteMoving = false,
+        }
+    },
 }
