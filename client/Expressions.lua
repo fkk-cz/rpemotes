@@ -36,6 +36,10 @@ if Config.ExpressionsEnabled then
         AddEventHandler('playerSpawned', function()
             local expression = GetResourceKvpString("expression")
             if expression ~= nil then
+                if not RP.Expressions[expression] then -- Invalid KvP value, clear it instead
+                    DeleteResourceKvp("expression")
+                    return
+                end
                 Wait(2500) -- Delay, to ensure the player ped has loaded in
                 SetPlayerPedExpression(expression, false)
             end

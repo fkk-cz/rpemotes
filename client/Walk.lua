@@ -29,6 +29,10 @@ function WalkCommandStart(source, args, raw)
         return
     end
 
+    if LocalPlayer.state.handcuffed or LocalPlayer.state.beingHandcuffed then
+        return
+    end
+
     if name == "Reset" then
         ResetPedMovementClipset(PlayerPedId())
         return
